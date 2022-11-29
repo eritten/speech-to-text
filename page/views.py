@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from voice_bot.decorators import add_bot
 
 # Create your views here.
-
-def home(request):
-    return render(request, 'home.html')
+@add_bot(bot_name="love")
+def home(request, **kwargs):
+    return render(request, 'home.html', {"commands": kwargs["commands"], "bot_name": kwargs["bot_name"], "speech_full": True})
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view

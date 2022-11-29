@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+"voice_bot",
 "rest_framework",
 "page",
     'django.contrib.admin',
